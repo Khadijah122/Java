@@ -1,0 +1,109 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.Scanner;  // Import the Scanner class
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner input= new Scanner (System.in);
+	int ticketTypy= input.nextInt();
+	if(ticketTypy== 1 || ticketTypy== 2){
+	    System.out.println("Enter a letter");
+	     	String userCity= input.next();
+	     
+	      if(userCity.equals("J") || userCity.equals("j") || userCity.equals("R") || userCity.equals("r") ){
+	          // System.out.println(" input"+ userCity);
+	          if(userCity.equals("J") || userCity.equals("j")){
+	             userCity= "Jeddah";
+	          }else {
+	              userCity= "Riyadh"; 
+	          }
+	          
+	          
+	          
+	          
+	         System.out.println("Adult");
+	                    int adult =input.nextInt(); 
+	                   /* if (adult <= 0){
+	                        System.out.println("Wrong number try agin");
+	                        adult =input.nextInt(); 
+	                    }*/
+	                    System.out.println("Children");
+	                    int Children =input.nextInt();
+	                   /* if (Children < 0){
+	                        System.out.println("Wrong number try agin");
+	                        Children =input.nextInt(); }
+	                     */
+	                     System.out.println("infant");
+	                    int infant =input.nextInt();
+	                   /* if (infant < 0){
+	                        System.out.println("Wrong number try agin");
+	                        infant =input.nextInt(); 
+	                    }
+	                   */
+	                   System.out.println("enter your name");
+	                   String  name =input.next();
+	                   
+	                   System.out.println("enter your passport number");
+	                   int  passNum =input.nextInt();
+
+	                   System.out.println("enter your contact number");
+	                   String  contactNum =input.next();
+	                   
+	                   /*int lenght = contactNum.length();
+	                   if(lenght < 10  ){
+	                        System.out.println("Wrong number try agin");
+	                        contactNum =input.next(); 
+	                   }*/
+	          
+                    	if(ticketTypy== 1){           
+	                          switch (userCity) {
+                                     case "Jeddah":
+                                                 System.out.println("Jeddah");
+                                                 int adultP= adult * 500;
+                                                 int childrenP= Children*450;
+                                                 int infantP= infant*400;
+                                                 int totalP= adultP+ childrenP+infantP;
+                                                 int TaxLoss= totalP- (15 *totalP)/100;
+                                                 int Tax= totalP- TaxLoss;
+                                                    System.out.println("Jeddah Tax = " + Tax);
+
+                                                 int ticketTotal= totalP+ Tax; 
+                                                 
+                                                    System.out.println("Jeddah ticket = " + ticketTotal);
+                                                    break;
+                                     case "Riyadh":
+                                                 System.out.println("Riyadh");
+                                                      break;
+                                     default:
+                                                System.out.println("Looking forward to the Weekend");
+                                            } 
+                        }else if(ticketTypy== 2){ 
+	                                    switch (userCity) {
+                                             case "Jeddah":
+                                                    System.out.println("Jeddah econmy");
+                                                         break;
+                                             case "Riyadh":
+                                                     System.out.println("Riyadh econmy");
+                                                          break;
+                                             default:
+                                                      System.out.println("Looking forward to the eee");
+                                                  } 
+                        }
+         }else {  // if j r 
+	          System.out.println("wrong input");
+	       }
+	  
+	  
+	       
+	}else{ //if 1 2
+	    System.out.println("wrong selection");
+         }
+	
+
+	}
+}
